@@ -15,12 +15,11 @@ const NotFound = () => {
       } else {
         router.push('/')
       }
-      console.log(counterValue)
     }, 1000)
     return () => {
       clearTimeout(timeId)
     }
-  }, [counterValue])
+  }, [counterValue, router])
 
   return (
     <Grid
