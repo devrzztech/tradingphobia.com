@@ -41,11 +41,11 @@ export default function Feedback() {
             required
             sx={{ my: 1 }}
             focused
-            color='success'
+            color='primary'
           />
           <TextField
             focused
-            color='success'
+            color='primary'
             fullWidth
             label='Comentarios'
             required
@@ -57,7 +57,7 @@ export default function Feedback() {
           <Button
             fullWidth
             variant='contained'
-            color='success'
+            color='primary'
             size='large'
             sx={{
               color: '#fff',

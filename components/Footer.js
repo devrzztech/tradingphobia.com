@@ -26,15 +26,9 @@ export default function Footer() {
               left: 200,
               transform: 'rotate(0deg)',
             },
-            '50%': {
-              top: 70,
-              left: 180,
-              transform: 'rotate(90deg)',
-            },
             '100%': {
               top: 100,
               left: 200,
-              transform: 'rotate(180deg)',
             },
           },
         }}
@@ -138,14 +132,14 @@ export default function Footer() {
                   variant='caption'
                   sx={{
                     fontSize: 15,
-                    backgroundColor: '#22c55e',
+                    backgroundColor: '#0EA5E9',
                     px: 1.2,
                     py: 0.1,
                     fontWeight: '600',
                     color: 'white',
                     borderRadius: 1,
                     '&:hover': {
-                      backgroundColor: '#4ade80',
+                      backgroundColor: '#48addb',
                     },
                   }}
                 >

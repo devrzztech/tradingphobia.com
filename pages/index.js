@@ -15,26 +15,31 @@ import Fixtures from '../components/Fixtures'
 import Articles from '../components/Articles'
 import Layout from '../components/Layout'
 import { createClient } from 'contentful'
+import safeJsonStringify from 'safe-json-stringify'
 
 export const getStaticProps = async () => {
   const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
   })
 
   const { items } = await client.getEntries({
     content_type: 'article',
   })
 
+  const data = safeJsonStringify(items)
+
   return {
     props: {
-      articles: items,
+      articles: data,
     },
     revalidate: 1,
   }
 }
 
 export default function Home({ articles }) {
+  articles = JSON.parse(articles)
+
   return (
     <Layout title='test' description='test'>
       {/* APP BAR */}
@@ -73,7 +78,7 @@ export default function Home({ articles }) {
             <Typography
               fontSize={30}
               fontWeight={600}
-              sx={{ textAlign: 'right' }}
+              sx={{ textAlign: 'left' }}
             >
               Lorem ipsum dolor sit amet consectetur adipisicing.
             </Typography>
@@ -81,7 +86,7 @@ export default function Home({ articles }) {
               color='text.secondary'
               fontSize={18}
               mt={2}
-              sx={{ textAlign: 'right' }}
+              sx={{ textAlign: 'left' }}
             >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
               perferendis error ratione labore maxime beatae repellat iure

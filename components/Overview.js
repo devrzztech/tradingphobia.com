@@ -69,8 +69,8 @@ export default function Overview() {
           sx={{ width: { xs: 358, md: 450 }, borderRadius: 4 }}
         >
           <CardActionArea>
-            <CardMedia sx={{ height: { xs: 440, md: 560 } }}>
-              <Image src='/img_overview.jpg' width={640} height={798} alt='' />
+            <CardMedia sx={{ height: { xs: 420, md: 520 } }}>
+              <Image src='/img_overview.png' width={680} height={798} alt='' />
             </CardMedia>
           </CardActionArea>
         </Card>

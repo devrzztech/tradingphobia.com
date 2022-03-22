@@ -65,7 +65,7 @@ export default function CardArticles({
             position: 'relative',
           }}
         >
-          <Link href={'/' + slug} alt=''>
+          <Link href={'/' + slug}>
             <a>
               <Image
                 src={'https:' + img_main}
@@ -74,6 +74,7 @@ export default function CardArticles({
                 // height={359}
                 layout='fill'
                 objectFit='cover'
+                priority
               />
             </a>
           </Link>
@@ -94,6 +95,7 @@ export default function CardArticles({
                 height={432}
                 layout='responsive'
                 objectFit='cover'
+                priority
               />
             </a>
           </Link>
@@ -121,6 +123,7 @@ export default function CardArticles({
                   // height={64}
                   layout='fill'
                   objectFit='cover'
+                  priority
                 />
               </Avatar>
               <Box

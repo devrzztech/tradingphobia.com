@@ -17,7 +17,7 @@ export default function Back() {
           fontSize: 16,
           letterSpacing: 0.2,
         }}
-        onClick={() => router.push('/')}
+        onClick={() => router.back()}
       >
         Volver
       </Button>

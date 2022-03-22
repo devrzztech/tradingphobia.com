@@ -18,13 +18,13 @@ export default function Facts() {
           <Card elevation={0} sx={{}}>
             <CardMedia
               sx={{
-                height: { xs: 1450, sm: 850, md: 1350, lg: 1000 },
+                height: { xs: 1600, sm: 850, md: 1350, lg: 1000 },
                 width: '100%',
                 // position: 'relative',
               }}
             >
               <Image
-                src='/img_facts.jpg'
+                src='/img_facts.svg'
                 // width={1920}
                 // height={1381}
                 alt='Trader analizando el comportamiento del mercado'
@@ -39,7 +39,7 @@ export default function Facts() {
             position: 'absolute',
             width: { xs: 'auto', md: '50%' },
             height: { xs: '100%', md: '100%' },
-            backgroundColor: 'rgba(16, 23, 42, .9)',
+            backgroundColor: 'rgba(16, 23, 42, .8)',
           }}
         >
           <Box sx={{ height: '100%', px: { xs: 1, md: 6 } }}>
@@ -122,9 +122,8 @@ export default function Facts() {
                         fontWeight: 700,
                         mt: 1,
                         mb: 0.4,
-                        color: '#22c55e',
                       }}
-                      // color='primary'
+                      color='primary'
                     >
                       Fácil de usar
                     </Typography>
@@ -133,7 +132,8 @@ export default function Facts() {
                       color='text.secondary'
                     >
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Blanditiis, vitae.
+                      Blanditiis, vitae. Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Blanditiis, vitae.
                     </Typography>
                   </Grid>
                   <Grid
@@ -166,9 +166,8 @@ export default function Facts() {
                         fontWeight: 700,
                         mt: 1,
                         mb: 0.4,
-                        color: '#22c55e',
                       }}
-                      // color='primary'
+                      color='primary'
                     >
                       Comisiones más bajas
                     </Typography>
@@ -177,7 +176,8 @@ export default function Facts() {
                       color='text.secondary'
                     >
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Blanditiis, vitae.
+                      Blanditiis, vitae. Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Blanditiis, vitae.
                     </Typography>
                   </Grid>
                   <Grid
@@ -210,9 +210,8 @@ export default function Facts() {
                         fontWeight: 700,
                         mt: 1,
                         mb: 0.4,
-                        color: '#22c55e',
                       }}
-                      // color='primary'
+                      color='primary'
                     >
                       Seguridad
                     </Typography>
@@ -221,7 +220,8 @@ export default function Facts() {
                       color='text.secondary'
                     >
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Blanditiis, vitae.
+                      Blanditiis, vitae. Lorem ipsum dolor sit amet consectetur
+                      adipisicing elit. Blanditiis, vitae.
                     </Typography>
                   </Grid>
                   <Grid
@@ -254,9 +254,8 @@ export default function Facts() {
                         fontWeight: 700,
                         mt: 1,
                         mb: 0.4,
-                        color: '#22c55e',
                       }}
-                      // color='primary'
+                      color='primary'
                     >
                       +Criptomonedas
                     </Typography>
@@ -265,7 +264,8 @@ export default function Facts() {
                       color='text.secondary'
                     >
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Blanditiis, vitae elit. .
+                      Blanditiis, vitae elit. Lorem ipsum dolor sit amet
+                      consectetur adipisicing elit. Blanditiis, vitae.
                     </Typography>
                   </Grid>
                 </Grid>
@@ -276,7 +276,7 @@ export default function Facts() {
       </Grid>
       <Box display='flex' justifyContent='center'>
         <Typography variant='overline'>
-          Photo by Anna Nekrashevich from Pexels
+          Image by Satheesh Sankaran from Pixabay
         </Typography>
       </Box>
     </>

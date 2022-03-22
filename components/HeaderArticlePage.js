@@ -2,10 +2,10 @@ import { Avatar, Box, Typography } from '@mui/material'
 import Image from 'next/image'
 import React from 'react'
 import Share from './Share'
+import AccessAlarmIcon from '@mui/icons-material/AccessAlarm'
+import { AvatarAnimations, AvatarAnimations2 } from '../styles/globalStyles'
 import { format, register } from 'timeago.js'
 import es from '../utils/es'
-import AccessAlarmIcon from '@mui/icons-material/AccessAlarm'
-import { AvatarAnimations2 } from '../styles/globalStyles'
 
 register('my-locale', es)
 
@@ -16,7 +16,8 @@ export default function HeaderArticlePage({
   date,
   time,
 }) {
-  const animations = AvatarAnimations2()
+  const animations = AvatarAnimations()
+  const animations2 = AvatarAnimations2()
 
   return (
     <Box flexDirection='row' display='flex'>
@@ -26,7 +27,7 @@ export default function HeaderArticlePage({
           height: 42,
           background: '#facc15',
           transform: 'rotate(-20deg)',
-          '&:hover': animations,
+          '&:hover': { xs: animations, lg: animations2 },
         }}
       >
         {/* FIXME: */}

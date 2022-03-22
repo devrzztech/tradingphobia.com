@@ -3,11 +3,11 @@ import React from 'react'
 import DisqusComments from './DisqusComments'
 import Related from './Related'
 
-export default function FooterArticlePage({ url, identifier, title }) {
+export default function FooterArticlePage({ url, identifier, title, related }) {
   return (
     <Grid container>
       <Grid item lg={12}>
-        <Related />
+        <Related related={related} />
       </Grid>
       <Grid
         container

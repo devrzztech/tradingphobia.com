@@ -22,9 +22,11 @@ export default function BodyArticlePage({
   title_2_h2,
   body_2_h2,
   conclusion,
+  // TAGS
   tag_1,
   tag_2,
   tag_3,
+
   // EXTRA
   title_3_h2,
   body_3_h2,
@@ -259,9 +261,9 @@ export default function BodyArticlePage({
 
         <Typography
           mt={3}
-          component='h4'
+          component='p'
           fontWeight={700}
-          sx={{ fontSize: { xs: 20, lg: 25 } }}
+          sx={{ fontSize: { xs: 22, lg: 25 } }}
         >
           Conclusión
         </Typography>

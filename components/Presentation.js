@@ -104,7 +104,8 @@ export default function Presentation() {
         >
           <CardMedia>
             <Image
-              src='/img_presentation.jpg'
+              src='/img_presentation.png'
+              // src='/img_presentation.jpg'
               width={1280}
               height={837}
               layout='responsive'
@@ -128,7 +129,8 @@ export default function Presentation() {
           }}
           variant='overline'
         >
-          Photo by Skitterphoto from Pexels
+          Image by OpenClipart-Vectors from Pixabay
+          {/* Photo by Skitterphoto from Pexels */}
         </Typography>
       </Box>
     </Box>

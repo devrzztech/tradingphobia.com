@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Grid, Typography } from '@mui/material'
 import Layout from '../components/Layout'
 import Back from '../components/Back'
@@ -6,10 +6,11 @@ import HeaderArticlePage from '../components/HeaderArticlePage'
 import BodyArticlePage from '../components/BodyArticlePage'
 import FooterArticlePage from '../components/FooterArticlePage'
 import { createClient } from 'contentful'
+import safeJsonStringify from 'safe-json-stringify'
 
 const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 })
 
 export const getStaticPaths = async () => {
@@ -44,8 +45,11 @@ export const getStaticProps = async ({ params }) => {
     }
   }
 
+  const stringifiedData = safeJsonStringify(items)
+  const data = JSON.parse(stringifiedData)
+
   return {
-    props: { article: items[0] },
+    props: { article: data[0] },
     revalidate: 1,
   }
 }
@@ -76,9 +80,8 @@ export default function Article({ article }) {
     body4H2,
     conclusion,
     tags,
+    related,
   } = article.fields
-
-  // console.log(article.fields)
 
   return (
     <Layout title={titleDocSeo} description={descriptionDocSeo}>
@@ -111,6 +114,7 @@ export default function Article({ article }) {
               title_2_h2={title2H2}
               body_2_h2={body2H2}
               conclusion={conclusion}
+              // TAGS
               tag_1={tags[0].fields.name}
               tag_2={tags[1].fields.name}
               tag_3={tags[2].fields.name}
@@ -131,6 +135,7 @@ export default function Article({ article }) {
           // url={`https://tradingphobia.com/${slug}`}
           identifier={article.sys.id}
           title={titleH1}
+          related={related}
         />
       </Grid>
     </Layout>
