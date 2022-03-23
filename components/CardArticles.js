@@ -8,6 +8,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import {
   Avatar,
+  Badge,
   Button,
   CardActionArea,
   CardActions,
@@ -16,6 +17,7 @@ import {
   Grid,
   Stack,
   Tooltip,
+  Link as LinkMaterial,
 } from '@mui/material'
 import Image from 'next/image'
 import Tags from './Tags'
@@ -167,20 +169,33 @@ export default function CardArticles({
             </Grid>
             <CardActions>
               <Grid item display='flex' alignSelf='center'>
-                <Link href='#'>
-                  <a style={{ color: '#0EA5E9' }}>
+                {/* TODO: */}
+                {/* color: '#0EA5E9' */}
+                <LinkMaterial
+                  onClick={() => console.log('click')}
+                  sx={{
+                    '&:hover': {
+                      cursor: 'pointer',
+                    },
+                  }}
+                >
+                  <Badge
+                    badgeContent={8}
+                    max={99}
+                    anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                  >
                     <Tooltip title='Me gusta'>
                       <FavoriteBorderIcon
                         sx={{
-                          fontSize: 24,
+                          fontSize: 26,
                           verticalAlign: 'middle',
                           display: 'inline-flex',
                           ml: 0.4,
                         }}
                       />
                     </Tooltip>
-                  </a>
-                </Link>
+                  </Badge>
+                </LinkMaterial>
                 {/* TODO: */}
                 {/* <Link href='#'>
                   <a style={{ color: '#0EA5E9' }}>

@@ -16,6 +16,7 @@ import Articles from '../components/Articles'
 import Layout from '../components/Layout'
 import { createClient } from 'contentful'
 import safeJsonStringify from 'safe-json-stringify'
+import Menu from '../components/Menu'
 
 export const getStaticProps = async () => {
   const client = createClient({
@@ -44,6 +45,10 @@ export default function Home({ articles }) {
     <Layout title='test' description='test'>
       {/* APP BAR */}
       <Navbar />
+
+      <Box mt={2} sx={{ display: { xs: 'flex', sm: 'none' } }}>
+        <Menu />
+      </Box>
 
       {/* SECTION 1 PRESENTATION */}
       <Presentation />

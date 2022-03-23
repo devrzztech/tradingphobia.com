@@ -34,7 +34,13 @@ export default function Article({ articles }) {
   return (
     <Layout title='test' description='test'>
       <Back />
-      <Grid container mt={8}>
+      <Grid
+        container
+        mt={8}
+        sx={{
+          px: { xs: 2, lg: 0 },
+        }}
+      >
         <Box display='flex' justifyContent='center' sx={{ width: '100%' }}>
           <Grid item lg={7}>
             <Typography fontWeight={800} fontSize={24} color='primary'>
