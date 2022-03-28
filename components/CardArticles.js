@@ -66,8 +66,6 @@ export default function CardArticles({
     }
   }, [arr, arrLikes, refresh])
 
-  console.log(arr)
-
   const like = () => {
     const newArr = arr
     newArr[index] = !arr[index]
