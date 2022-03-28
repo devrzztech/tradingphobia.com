@@ -26,10 +26,17 @@ import es from '../utils/es'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Link from 'next/link'
 import { AvatarAnimations2 } from '../styles/globalStyles'
+import { useReducer } from 'react'
+import { useState } from 'react'
+import { useEffect } from 'react'
 
 register('my-locale', es)
 
 export default function CardArticles({
+  id,
+  index,
+  arrLikes,
+  setArrLikes,
   slug,
   img_main,
   img_main_alt,
@@ -45,6 +52,37 @@ export default function CardArticles({
   tag_3,
 }) {
   const animations = AvatarAnimations2()
+
+  const [arr, setArr] = useState([])
+  const [refresh, setRefresh] = useState(false)
+
+  useEffect(() => {
+    if (arrLikes) {
+      setArr(arrLikes)
+    }
+    if (refresh === true) {
+      setArr(arrLikes)
+      setRefresh(false)
+    }
+  }, [arr, arrLikes, refresh])
+
+  console.log(arr)
+
+  const like = () => {
+    const newArr = arr
+    newArr[index] = !arr[index]
+    setArr(newArr)
+    setRefresh(true)
+    localStorage.setItem('likes', JSON.stringify(newArr))
+  }
+
+  const dislike = () => {
+    const newArr = arr
+    newArr[index] = !arr[index]
+    setArr(newArr)
+    setRefresh(true)
+    localStorage.setItem('likes', JSON.stringify(newArr))
+  }
 
   return (
     <Card
@@ -169,22 +207,40 @@ export default function CardArticles({
             </Grid>
             <CardActions>
               <Grid item display='flex' alignSelf='center'>
-                {/* TODO: */}
-                {/* color: '#0EA5E9' */}
-                <LinkMaterial
-                  onClick={() => console.log('click')}
-                  sx={{
-                    '&:hover': {
-                      cursor: 'pointer',
-                    },
-                  }}
-                >
-                  <Badge
-                    badgeContent={8}
-                    max={99}
-                    anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                {arr.length > 0 && arr[index] ? (
+                  <LinkMaterial
+                    onClick={() => like()}
+                    sx={{
+                      color: '#ef4444',
+
+                      '&:hover': {
+                        cursor: 'pointer',
+                      },
+                    }}
                   >
                     <Tooltip title='Me gusta'>
+                      <FavoriteIcon
+                        sx={{
+                          fontSize: 26,
+                          verticalAlign: 'middle',
+                          display: 'inline-flex',
+                          ml: 0.4,
+                        }}
+                      />
+                    </Tooltip>
+                  </LinkMaterial>
+                ) : (
+                  <LinkMaterial
+                    onClick={() => dislike()}
+                    sx={{
+                      color: '#ef4444',
+
+                      '&:hover': {
+                        cursor: 'pointer',
+                      },
+                    }}
+                  >
+                    <Tooltip title='No me gusta'>
                       <FavoriteBorderIcon
                         sx={{
                           fontSize: 26,
@@ -194,22 +250,8 @@ export default function CardArticles({
                         }}
                       />
                     </Tooltip>
-                  </Badge>
-                </LinkMaterial>
-                {/* TODO: */}
-                {/* <Link href='#'>
-                  <a style={{ color: '#0EA5E9' }}>
-                    <Tooltip title='No me gusta'>
-                      <FavoriteIcon
-                        sx={{
-                          fontSize: 24,
-                          verticalAlign: 'middle',
-                          display: 'inline-flex',
-                        }}
-                      />
-                    </Tooltip>
-                  </a>
-                </Link> */}
+                  </LinkMaterial>
+                )}
               </Grid>
             </CardActions>
           </Grid>

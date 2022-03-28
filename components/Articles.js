@@ -1,8 +1,27 @@
 import { Grid, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CardArticles from './CardArticles'
 
 export default function Articles({ articles }) {
+  const [arrLikes, setArrLikes] = useState([])
+
+  useEffect(() => {
+    function checkArrLikes() {
+      const item = JSON.parse(localStorage.getItem('likes') || '[]')
+      if (item.length > 0) {
+        setArrLikes(item)
+      }
+    }
+
+    window.addEventListener('storage', checkArrLikes())
+
+    return () => {
+      window.removeEventListener('storage', checkArrLikes())
+    }
+  }, [])
+
+  // console.log(arrLikes)
+
   return (
     <>
       <Grid container sx={{ pb: 1, px: 2 }}>
@@ -40,7 +59,7 @@ export default function Articles({ articles }) {
         justifyContent='space-evenly'
       >
         {/* HERE ADD MORE ARTICLES */}
-        {articles.map(article => (
+        {articles.map((article, index) => (
           // console.log(article.fields.bodyH1.content[0].content[0].value)
 
           <Grid
@@ -54,6 +73,10 @@ export default function Articles({ articles }) {
             key={article.sys.id}
           >
             <CardArticles
+              id={article.sys.id}
+              index={index}
+              arrLikes={arrLikes}
+              setArrLikes={setArrLikes}
               slug={article.fields.slug}
               img_main={article.fields.imgMain.fields.file.url}
               img_main_alt={article.fields.imgMain.fields.description}

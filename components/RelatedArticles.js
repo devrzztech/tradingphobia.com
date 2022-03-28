@@ -41,7 +41,7 @@ export default function RelatedArticles({ relate }) {
           color='text.primary'
           component='h3'
           sx={{
-            fontSize: { xs: 14.6, md: 16.6 },
+            fontSize: { xs: 14.6, md: 17 },
             fontWeight: { xs: 600, md: 700 },
           }}
         >

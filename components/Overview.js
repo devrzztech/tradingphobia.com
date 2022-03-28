@@ -33,17 +33,17 @@ export default function Overview() {
               color: '#fff',
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur
-            quos ratione voluptatibus odit quid
+            ¿Cómo dejar de ser un simple apostador del mercado y terminar cada
+            jornada de trading con esta cara?
           </Typography>
           <Typography
             sx={{ mt: 2, fontSize: { xs: 16, md: 18 }, color: '#94A3B8' }}
           >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
-            aliquid voluptatem harum fuga, molestiae nihil labore incidunt!
-            Ipsam, earum. Fugit placeat repellat id, corporis assumenda nihil
-            odio dolores laborum esse sapiente in molestias quod, error, amet
-            ipsa cupiditate odit ab.
+            ¿Es eso posible? Lorem ipsum dolor sit amet consectetur, adipisicing
+            elit. Cum aliquid voluptatem harum fuga, molestiae nihil labore
+            incidunt! Ipsam, earum. Fugit placeat repellat id, corporis
+            assumenda nihil odio dolores laborum esse sapiente in molestias
+            quod, error, amet ipsa cupiditate odit ab.
           </Typography>
           <Button
             // className='buttonRobinhood'
