@@ -41,7 +41,7 @@ export default function RelatedArticles({ relate }) {
           color='text.primary'
           component='h3'
           sx={{
-            fontSize: { xs: 14.6, md: 17 },
+            fontSize: { xs: 16, md: 18 },
             fontWeight: { xs: 600, md: 700 },
           }}
         >
@@ -55,6 +55,7 @@ export default function RelatedArticles({ relate }) {
           <Box component='span'>{format(relate.dateArticle, 'my-locale')}</Box>
         </Typography>
         <Typography
+          className='truncateText'
           mt={1}
           fontSize={14.2}
           color='text.secondary'
@@ -62,7 +63,8 @@ export default function RelatedArticles({ relate }) {
             display: { xs: 'none', sm: 'flex' },
           }}
         >
-          {documentToReactComponents(relate.bodyH1)}
+          {relate.descriptionDocSeo}
+          {/* {documentToReactComponents(relate.bodyH1)} */}
         </Typography>
       </Grid>
     </Grid>

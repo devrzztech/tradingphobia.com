@@ -28,7 +28,7 @@ export default function Overview() {
             variant='h2'
             component='h2'
             sx={{
-              fontSize: { xs: 24, md: 36 },
+              fontSize: { xs: 26, md: 34 },
               fontWeight: 800,
               color: '#fff',
             }}

@@ -17,6 +17,7 @@ import Layout from '../components/Layout'
 import { createClient } from 'contentful'
 import safeJsonStringify from 'safe-json-stringify'
 import Menu from '../components/Menu'
+import { useState } from 'react'
 
 export const getStaticProps = async () => {
   const client = createClient({
@@ -41,6 +42,27 @@ export const getStaticProps = async () => {
 export default function Home({ articles }) {
   articles = JSON.parse(articles)
 
+  // console.log(articles[0].sys.createdAt)
+
+  // PAGINATION LOGIC
+
+  const [currentPage, setCurrentPage] = useState(1)
+  const [articlesPerPage] = useState(4)
+
+  // Get current articles
+  const last = currentPage * articlesPerPage
+  const first = last - articlesPerPage
+  const current = articles.slice(first, last)
+
+  current.sort(
+    (a, b) =>
+      new Date(b.sys.createdAt).getTime() - new Date(a.sys.createdAt).getTime()
+  )
+
+  // console.log(updated)
+
+  // END PAGINATION LOGIC
+
   return (
     <Layout title='test' description='test'>
       {/* APP BAR */}
@@ -62,9 +84,14 @@ export default function Home({ articles }) {
           mt: 14,
         }}
       >
-        <Articles articles={articles} />
+        <Articles articles={current} />
 
-        <PaginationArticles />
+        <PaginationArticles
+          articlesPerPage={articlesPerPage}
+          totalArticles={articles.length}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
       </Box>
 
       {/* SECTION 4 SUBSCRIPTION */}

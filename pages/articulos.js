@@ -31,6 +31,10 @@ export const getStaticProps = async () => {
 export default function Article({ articles }) {
   articles = JSON.parse(articles)
 
+  articles.sort(
+    (a, b) =>
+      new Date(b.sys.createdAt).getTime() - new Date(a.sys.createdAt).getTime()
+  )
   return (
     <Layout title='test' description='test'>
       <Back />

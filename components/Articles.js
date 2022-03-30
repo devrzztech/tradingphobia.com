@@ -10,6 +10,10 @@ export default function Articles({ articles }) {
       const item = JSON.parse(localStorage.getItem('likes') || '[]')
       if (item.length > 0) {
         setArrLikes(item)
+      } else {
+        for (let i = 0; i < articles.length; i++) {
+          arrLikes[i] = null
+        }
       }
     }
 

@@ -2,12 +2,26 @@ import React from 'react'
 import Pagination from '@mui/material/Pagination'
 import { Box } from '@mui/system'
 
-export default function PaginationArticles() {
+export default function PaginationArticles({
+  articlesPerPage,
+  totalArticles,
+  currentPage,
+  setCurrentPage,
+}) {
+  const pageNumber = []
+
+  for (let i = 0; i < Math.ceil(totalArticles / articlesPerPage); i++) {
+    pageNumber.push(i)
+  }
+
   return (
     <>
       {/* ONLY MD BREAKPOINT */}
       <Pagination
-        count={10}
+        count={pageNumber.length}
+        onChange={(e, page) => setCurrentPage(page)}
+        page={currentPage}
+        shape='rounded'
         showFirstButton
         showLastButton
         color='primary'
@@ -20,7 +34,10 @@ export default function PaginationArticles() {
 
       {/* ONLY XS BREAKPOINT */}
       <Pagination
-        count={10}
+        count={pageNumber.length}
+        onChange={(e, page) => setCurrentPage(page)}
+        page={currentPage}
+        shape='rounded'
         color='primary'
         sx={{
           display: { xs: 'flex', sm: 'none', md: 'none' },
