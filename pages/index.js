@@ -15,7 +15,6 @@ import Fixtures from '../components/Fixtures'
 import Articles from '../components/Articles'
 import Layout from '../components/Layout'
 import { createClient } from 'contentful'
-import safeJsonStringify from 'safe-json-stringify'
 import Menu from '../components/Menu'
 import { useState } from 'react'
 
@@ -29,19 +28,15 @@ export const getStaticProps = async () => {
     content_type: 'article',
   })
 
-  const data = safeJsonStringify(items)
-
   return {
     props: {
-      articles: data,
+      articles: items,
     },
     revalidate: 1,
   }
 }
 
 export default function Home({ articles }) {
-  articles = JSON.parse(articles)
-
   // console.log(articles[0].sys.createdAt)
 
   // PAGINATION LOGIC

@@ -17,7 +17,6 @@ import { useRouter } from 'next/router'
 
 export default function Related({ related }) {
   const router = useRouter()
-
   return (
     <Grid mt={8} py={6} container bgcolor='#1e293b'>
       <Grid item lg={1} sx={{ display: { xs: 'none', lg: 'flex' } }} />
@@ -67,20 +66,21 @@ export default function Related({ related }) {
           </Typography>
         </Button>
         <Container sx={{ mt: 1 }}>
-          {related.map(relate => (
-            <CardActionArea key={relate.sys.id}>
-              <Link href={'/' + relate.fields.slug}>
-                <a style={{ textDecoration: 'none' }}>
-                  <RelatedArticles relate={relate.fields} />
-                  <Divider
-                    sx={{
-                      backgroundColor: '#0EA5E9',
-                    }}
-                  />
-                </a>
-              </Link>
-            </CardActionArea>
-          ))}
+          {related &&
+            related.map(relate => (
+              <CardActionArea key={relate.sys.id}>
+                <Link href={'/' + relate.fields.slug}>
+                  <a style={{ textDecoration: 'none' }}>
+                    <RelatedArticles relate={relate.fields} />
+                    <Divider
+                      sx={{
+                        backgroundColor: '#0EA5E9',
+                      }}
+                    />
+                  </a>
+                </Link>
+              </CardActionArea>
+            ))}
         </Container>
       </Grid>
     </Grid>

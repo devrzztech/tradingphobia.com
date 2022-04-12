@@ -7,7 +7,7 @@ export default function FooterArticlePage({ url, identifier, title, related }) {
   return (
     <Grid container>
       <Grid item lg={12}>
-        <Related related={related} />
+        {related ? <Related related={related} /> : <Box mb={8}></Box>}
       </Grid>
       <Grid
         container
