@@ -122,6 +122,7 @@ export default function CardArticles({
             width: { sm: 275, md: 245, xl: '100%' },
             height: '100%',
             display: { xs: 'block', sm: 'none', md: 'none' },
+            position: 'relative',
           }}
         >
           <Link href={'/' + slug} alt=''>

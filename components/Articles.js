@@ -22,7 +22,7 @@ export default function Articles({ articles }) {
     return () => {
       window.removeEventListener('storage', checkArrLikes())
     }
-  }, [])
+  }, [arrLikes, articles.length])
 
   // console.log(arrLikes)
 

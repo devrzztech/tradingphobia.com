@@ -6,7 +6,6 @@ import Back from '../components/Back'
 import Link from 'next/link'
 import RelatedArticles from '../components/RelatedArticles'
 import { createClient } from 'contentful'
-import safeJsonStringify from 'safe-json-stringify'
 
 export const getStaticProps = async () => {
   const client = createClient({
@@ -18,19 +17,15 @@ export const getStaticProps = async () => {
     content_type: 'article',
   })
 
-  const data = safeJsonStringify(items)
-
   return {
     props: {
-      articles: data,
+      articles: items,
     },
     revalidate: 1,
   }
 }
 
 export default function Article({ articles }) {
-  articles = JSON.parse(articles)
-
   articles.sort(
     (a, b) =>
       new Date(b.sys.createdAt).getTime() - new Date(a.sys.createdAt).getTime()

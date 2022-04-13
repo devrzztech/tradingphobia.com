@@ -6,7 +6,6 @@ import HeaderArticlePage from '../components/HeaderArticlePage'
 import BodyArticlePage from '../components/BodyArticlePage'
 import FooterArticlePage from '../components/FooterArticlePage'
 import { createClient } from 'contentful'
-// import safeJsonStringify from 'safe-json-stringify'
 
 const client = createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
@@ -44,9 +43,6 @@ export const getStaticProps = async ({ params }) => {
       },
     }
   }
-
-  // const stringifiedData = safeJsonStringify(items)
-  // const data = JSON.parse(stringifiedData)
 
   return {
     props: { article: items[0] },

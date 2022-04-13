@@ -1,6 +1,5 @@
 import fs from 'fs'
 import { createClient } from 'contentful'
-import safeJsonStringify from 'safe-json-stringify'
 
 const Sitemap = () => {}
 
@@ -13,9 +12,6 @@ export const getServerSideProps = async ({ res }) => {
   const { items } = await client.getEntries({
     content_type: 'article',
   })
-
-  const stringifiedData = safeJsonStringify(items)
-  const data = JSON.parse(stringifiedData)
 
   const baseUrl = {
     development: 'http://localhost:3000',
@@ -38,6 +34,25 @@ export const getServerSideProps = async ({ res }) => {
         'sitemap.xml.js',
         'api',
         '[slug].js',
+        '.DS_Store',
+        '.env.local',
+        '.eslintrc.json',
+        '.git',
+        '.gitignore',
+        '.next',
+        '.vscode',
+        'README.md',
+        'components',
+        'next.config.js',
+        'node_modules',
+        'package.json',
+        'pages',
+        'public',
+        'schema',
+        'styles',
+        'utils',
+        'yarn-error.log',
+        'yarn.lock',
       ].includes(staticPage)
     })
     .map(staticPagePath => {
@@ -60,7 +75,7 @@ export const getServerSideProps = async ({ res }) => {
           `
       })
       .join('')}
-      ${data
+      ${items
         .map(article => {
           return `
               <url>
