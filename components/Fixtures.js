@@ -76,6 +76,7 @@ export default function Fixtures() {
                   layout='fill'
                   objectFit='cover'
                   alt=''
+                  priority
                 />
               </Avatar>
             </Grid>

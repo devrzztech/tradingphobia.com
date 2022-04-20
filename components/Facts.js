@@ -30,6 +30,7 @@ export default function Facts() {
                 alt='Trader analizando el comportamiento del mercado'
                 layout='fill'
                 objectFit='cover'
+                priority
               />
             </CardMedia>
           </Card>
@@ -113,6 +114,7 @@ export default function Facts() {
                         width={64}
                         height={64}
                         alt=''
+                        priority
                       />
                     </Avatar>
                     <Typography
@@ -157,6 +159,7 @@ export default function Facts() {
                         width={64}
                         height={64}
                         alt=''
+                        priority
                       />
                     </Avatar>
                     <Typography
@@ -201,6 +204,7 @@ export default function Facts() {
                         width={64}
                         height={64}
                         alt=''
+                        priority
                       />
                     </Avatar>
                     <Typography
@@ -245,6 +249,7 @@ export default function Facts() {
                         width={64}
                         height={64}
                         alt=''
+                        priority
                       />
                     </Avatar>
                     <Typography

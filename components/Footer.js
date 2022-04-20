@@ -33,7 +33,7 @@ export default function Footer() {
           },
         }}
       >
-        <Image src='/img_navbar.png' alt='' width={24} height={24} />
+        <Image src='/img_navbar.png' alt='' width={24} height={24} priority />
       </Box>
 
       <Grid

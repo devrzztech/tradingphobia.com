@@ -31,7 +31,13 @@ export default function ButtonAppBar() {
                   transform: 'rotate(-20deg)',
                 }}
               >
-                <Image src='/img_navbar.png' width={28} height={28} alt='' />
+                <Image
+                  src='/img_navbar.png'
+                  width={28}
+                  height={28}
+                  alt=''
+                  priority
+                />
               </Box>
 
               <Typography

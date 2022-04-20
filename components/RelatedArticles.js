@@ -33,6 +33,7 @@ export default function RelatedArticles({ relate }) {
             alt={relate.imgMain.fields.description}
             layout='fill'
             objectFit='cover'
+            priority
           />
         </Avatar>
       </Grid>

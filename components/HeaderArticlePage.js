@@ -36,6 +36,7 @@ export default function HeaderArticlePage({
           layout='fill'
           objectFit='cover'
           alt={img_avatar_alt}
+          priority
         />
       </Avatar>
       <Box

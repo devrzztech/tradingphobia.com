@@ -97,6 +97,7 @@ export default function Subscription() {
                         layout='fill'
                         objectFit='cover'
                         alt=''
+                        priority
                       />
                     </Avatar>
                   </Grid>

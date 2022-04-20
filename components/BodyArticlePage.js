@@ -141,6 +141,7 @@ export default function BodyArticlePage({
               layout='responsive'
               objectFit='cover'
               alt={img_secondary_alt}
+              priority
             />
           </CardMedia>
         </Card>
@@ -221,6 +222,7 @@ export default function BodyArticlePage({
                   layout='responsive'
                   objectFit='cover'
                   alt={imgSecondary_3_h2.fields.description}
+                  priority
                 />
               </CardMedia>
             </Card>

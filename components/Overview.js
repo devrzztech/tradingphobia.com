@@ -70,7 +70,13 @@ export default function Overview() {
         >
           <CardActionArea>
             <CardMedia sx={{ height: { xs: 420, md: 520 } }}>
-              <Image src='/img_overview.png' width={680} height={798} alt='' />
+              <Image
+                src='/img_overview.png'
+                width={680}
+                height={798}
+                alt=''
+                priority
+              />
             </CardMedia>
           </CardActionArea>
         </Card>

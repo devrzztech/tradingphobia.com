@@ -33,7 +33,13 @@ export default function Share() {
             '&:hover': animations,
           }}
         >
-          <Image width={32} height={32} src='/icon-twitter.png' alt='' />
+          <Image
+            width={32}
+            height={32}
+            src='/icon-twitter.png'
+            alt=''
+            priority
+          />
         </Avatar>
       </Tooltip>
       <Tooltip title='Instagram'>
@@ -47,7 +53,13 @@ export default function Share() {
             '&:hover': animations,
           }}
         >
-          <Image width={32} height={32} src='/icon-instagram.png' alt='' />
+          <Image
+            width={32}
+            height={32}
+            src='/icon-instagram.png'
+            alt=''
+            priority
+          />
         </Avatar>
       </Tooltip>
       <Tooltip title='Facebook'>
@@ -61,7 +73,13 @@ export default function Share() {
             '&:hover': animations,
           }}
         >
-          <Image width={32} height={32} src='/icon-facebook.png' alt='' />
+          <Image
+            width={32}
+            height={32}
+            src='/icon-facebook.png'
+            alt=''
+            priority
+          />
         </Avatar>
       </Tooltip>
       <Tooltip title='Copiar enlace'>
@@ -80,6 +98,7 @@ export default function Share() {
             height={32}
             src='/icon-copy-to-clipboard.png'
             alt=''
+            priority
           />
         </Avatar>
       </Tooltip>
